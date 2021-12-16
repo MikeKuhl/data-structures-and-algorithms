@@ -8,8 +8,6 @@ Write a function named longestString that takes in an array of strings and retur
 
 const longestString = (arr) => {
   // Solution code here...
-
-  return arr.indexOf(arr.reduce((a, b) => (a.length > b.length ? a : b), 0));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -52,9 +50,6 @@ For example, (123) 456-7890 returns 1234567890
 
 const standardizePhoneNumbers = (arr) => {
   // Solution code here...
-  // https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#es6
-  // https://www.freecodecamp.org/news/a-quick-and-simple-guide-to-javascript-regular-expressions-48b46a68df29/
-  return arr.map((number) => number.match(/\d/g).join(""));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,10 +62,6 @@ For example, 'abcdefg' returns 'bdf'
 
 const onlyOddChars = (str) => {
   // Solution code here...
-  return str
-    .split("")
-    .filter((odd) => str.indexOf(odd) % 2 === 1)
-    .join("");
 };
 
 /* ------------------------------------------------------------------------------------------------
