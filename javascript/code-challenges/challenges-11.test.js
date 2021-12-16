@@ -1,5 +1,7 @@
 "use strict";
 
+const { resetDefaultConfig } = require("eslint/lib/rule-tester/rule-tester");
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -20,10 +22,6 @@ Becomes:
 
 function transformToLis(obj) {
   // Solution code here...
-  let keys = Object.keys(obj);
-  return keys.map((key) => {
-    return `<li>${key}: ${obj[key]}</li>`;
-  });
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -79,11 +77,9 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
-  return input.map((arr) =>
-    arr
-      .filter((arrElem) => arrElem % 5 === 0 && typeof arrElem === "number")
-      .map((numbers) => (numbers ? Math.pow(2, numbers) : []))
-  );
+  return input.filter(function (x) {
+    return !(a % 5) * 2;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -162,7 +158,6 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 
 let findShortest = (data) => {
   // Solution code here...
-  return data.sort((a, b) => a.height - b.height)[0].name;
 };
 
 /* ------------------------------------------------------------------------------------------------
