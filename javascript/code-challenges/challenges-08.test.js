@@ -56,6 +56,7 @@ let characters = [
 
 const sortByChildren = (charArray) => {
   // Solution code here...
+  return charArray.sort((a, b) => a.children.length - b.children.length);
 };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -98,7 +99,7 @@ Write a function named containsWorld that takes in a string or number of any len
 const containsWorld = (input) => {
   // Solution code here...
 
-  let regex = /\world/;
+  let regex = /world/g;
   return regex.test(input);
 };
 
@@ -112,10 +113,9 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
-  // const regex = /\[A-Z][a-z];
-  // const regex = /[A-Z][A-Z\d]+/;
-  // const result = str.match(regex);
-  // console.log(result);
+  let regex = /[A-Z][a-z]+/g;
+  let result = str.match(regex);
+  return result || [];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -126,6 +126,8 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  let regex = /^[A-J]/;
+  return arr.filter((city) => regex.test(city));
 };
 
 /* ------------------------------------------------------------------------------------------------
