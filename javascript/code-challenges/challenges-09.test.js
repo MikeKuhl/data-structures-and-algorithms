@@ -154,6 +154,13 @@ const hasChildrenValues = (arr, character) => {
   // Solution code here...
   // return Object.values(arr).includes(character);
   // return arr.hasOwnProperty(character);
+  let characterFilter = arr.filter((characterObj) => {
+    if (characterObj.name === character) {
+      return character;
+    }
+  });
+  let isObject = Object.values(characterFilter[0]);
+  return typeof isObject[2] === "object";
 };
 
 /* ------------------------------------------------------------------------------------------------
