@@ -154,6 +154,11 @@ const hasChildrenValues = (arr, character) => {
   // Solution code here...
   // return Object.values(arr).includes(character);
   // return arr.hasOwnProperty(character);
+
+  for (let key in character)
+    if (arr[key].name === character && arr[key].children != undefined) {
+      return true;
+    }
 };
 
 /* ------------------------------------------------------------------------------------------------
